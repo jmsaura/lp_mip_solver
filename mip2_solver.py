@@ -1,6 +1,5 @@
-from pulp import *
-
-def solve_knapsack():
+from  pulp import *
+def solve_kp():
     prob = LpProblem("Knapsack", LpMaximize)
     a = LpVariable("a", cat="Binary")
     b = LpVariable("b", cat="Binary")
@@ -8,6 +7,9 @@ def solve_knapsack():
     prob += 5*a + 3*b + 2*c
     prob += 2*a + b + c <= 10
     prob.solve()
+    print("PRINT A",a.varValue);
+    print("PRINT B",b.varValue);
+    print("PRINT C",c.varValue);
     return {"a": a.varValue, "b": b.varValue, "c": c.varValue, "objective": prob.objective.value()}
-
-solve_knapsack();
+solve_kp()
+    
