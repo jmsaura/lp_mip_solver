@@ -9,3 +9,5 @@ def solve_buggy_lp():
     prob += 2*x + y <= 5  # Incorrect constraint (too restrictive)
     prob.solve()
     return {"x": x.varValue, "y": y.varValue, "objective": prob.objective.value()}
+
+solve_buggy_lp()
