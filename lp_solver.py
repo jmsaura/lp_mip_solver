@@ -10,4 +10,4 @@ def solve_lp():
     prob.solve()
     return {"x": x.varValue, "y": y.varValue, "objective": prob.objective.value()}
 
-solve_lp()
+solve_lp();
